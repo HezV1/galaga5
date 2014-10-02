@@ -2,6 +2,7 @@ var stage;
 var playership;
 var KY_RT;
 var KY_LT;
+var background;
 function init() {
 	stage = new createjs.Stage("screen");
 	createjs.Ticker.addEventListener("tick", handleTick);
@@ -11,12 +12,15 @@ function init() {
 }
 function start() {
 	playership = new createjs.Bitmap("galagaship.png");
-	playership.x = 0;
-	playership.y = 0;
+	playership.x = 250;
+	playership.y = 590;
 	playership.scaleX = .5
 	playership.scaleY = .5
 	playership.regX = 50
-	playership.regY = 54
+	playership.regY = 105
+	background = new createjs.Shape();
+	background.graphics.beginFill("black").drawRect(0, 0, 500, 600);
+	stage.addChild(background);
 	stage.addChild(playership);
 	stage.update();
 }
